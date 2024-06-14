@@ -1,0 +1,38 @@
+podman machine start
+podman build -f Dockerfile -t treinamento-v0 .
+podman run -d --name ct_treinamentov0 -p 8000:8501 treinamento-v0
+
+
+aws configure
+build.bat
+
+
+
+Comando                                                        | Descrição
+---------------------------------------------------------------|----------------------------
+podman ps                                                      | Listar contêineres em execução
+podman ps -a                                                   | Listar todos os contêineres (incluindo os parados)
+podman start <container_id_or_name>                            | Iniciar um contêiner
+podman stop <container_id_or_name>                             | Parar um contêiner
+podman restart <container_id_or_name>                          | Reiniciar um contêiner
+podman rm <container_id_or_name>                               | Remover um contêiner
+podman run -d --name <container_name> <image_name>             | Criar e executar um novo contêiner
+podman exec -it <container_id_or_name> <command>               | Executar um comando em um contêiner em execução
+podman exec -it <container_id_or_name> /bin/bash               | Abrir um shell interativo em um contêiner em execução
+podman images                                                  | Listar imagens locais
+podman pull <image_name>                                       | Baixar uma imagem
+podman rmi <image_name>                             q           | Remover uma imagem
+podman build -t <image_name> <path_to_dockerfile>              | Construir uma nova imagem a partir de um Dockerfile
+podman tag <image_name>:<tag> <new_image_name>:<new_tag>       | Taguear uma imagem
+podman push <image_name>:<tag> <repository_url>                | Enviar uma imagem para um repositório
+podman inspect <image_name>                                    | Buscar detalhes de uma imagem
+podman logs <container_id_or_name>                             | Ver logs de um contêiner
+podman inspect <container_id_or_name_or_image>                 | Inspecionar um contêiner ou imagem
+podman volume ls                                               | Listar volumes
+podman volume create <volume_name>                             | Criar um volume
+podman volume rm <volume_name>                                 | Remover um volume
+podman network ls                                              | Listar redes
+podman network create <network_name>                           | Criar uma nova rede
+podman network rm <network_name>                               | Remover uma rede
+podman --version                                               | Obter a versão do Podman
+podman info                                                    | Ver o status do sistema Podman
